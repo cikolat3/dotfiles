@@ -48,6 +48,8 @@ bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 #Press ctrl+alt+x - check toolbar for next choices
 #bindsym control+mod1+X mode "$mode_system"
 
+bindsym $mod+Shift+q exec --no-startup-id arcolinux-logout
+
 set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
 mode "$mode_system" {
     bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
@@ -203,6 +205,9 @@ font pango:Noto Mono Regular 13
 #some autostarts
 
 # custom
+
+# xfce4-clipman indicator
+exec --no-startup-id xfce4-clipman
 
 # compton
 exec --no-startup-id compton &

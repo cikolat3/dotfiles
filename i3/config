@@ -48,6 +48,8 @@ bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 #Press ctrl+alt+x - check toolbar for next choices
 #bindsym control+mod1+X mode "$mode_system"
 
+bindsym $mod+Shift+q exec --no-startup-id arcolinux-logout
+
 set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
 mode "$mode_system" {
     bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
@@ -205,7 +207,7 @@ font pango:Noto Mono Regular 13
 # custom
 
 # xfce4-clipman indicator
-exec --no-startup-id xfce4-clipman
+#exec --no-startup-id xfce4-clipman
 
 # compton
 exec --no-startup-id compton &
@@ -296,6 +298,7 @@ bindsym $mod+F10 exec --no-startup-id spotify;focus; workspace 10
 # screenshots
 
 bindsym Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+bindsym Shift+Print exec "scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 bindsym Control+Print exec --no-startup-id xfce4-screenshooter
 
 
