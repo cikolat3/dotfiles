@@ -206,6 +206,9 @@ font pango:Noto Mono Regular 13
 
 # custom
 
+# redshift
+exec --no-startup-id redshift-gtk
+
 # xfce4-clipman indicator
 #exec --no-startup-id xfce4-clipman
 
@@ -264,7 +267,7 @@ bindsym $mod+Shift+d exec --no-startup-id firefox-nightly --new-window translate
 bindsym control+mod1+e exec --no-startup-id arcolinux-tweak-tool
 
 # terminal
-bindsym $mod+Return exec --no-startup-id urxvt;focus
+bindsym $mod+Return exec --no-startup-id termite;focus
 
 #System monitor
 bindsym $mod+c exec --no-startup-id xfce4-taskmanager;focus
