@@ -20,7 +20,7 @@
  '(neo-theme (quote nerd))
  '(package-selected-packages
    (quote
-    (ascii-table neotree spacemacs-theme flycheck iedit auto-complete-c-headers yasnippet-snippets yasnippet auto-complete undo-tree)))
+    (autopair ascii-table neotree spacemacs-theme flycheck iedit auto-complete-c-headers yasnippet-snippets yasnippet auto-complete undo-tree)))
  '(ps-font-size (quote (7 . 8.5)))
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -29,6 +29,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; set some commands
+(setq compile-command "make")
 
 ;; start auto-complete with emacs
 (require 'auto-complete)
@@ -77,3 +80,13 @@
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 ; turn on ede mode 
 (global-ede-mode 1)
+
+
+;; autopair
+(require 'autopair)
+(autopair-global-mode)
+
+
+;; some custom keybindings
+(define-key global-map (kbd "C-q") 'goto-line)
+(define-key global-map (kbd "C-c c") 'compile)
